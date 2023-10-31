@@ -1,16 +1,17 @@
 import { useFetch } from "./hooks/useFetch";
-//
-import "./App.css";
+import Header from "./components/Header";
+import { Outlet } from "react-router-dom";
+import Footer from "./components/Footer";
 
 function App() {
-  const { data, error, loading } = useFetch("products");
-  const categories = useFetch("products/categories");
-
-  console.log(categories);
+  // const { data, error, loading } = useFetch("products");
+  // const categories = useFetch("products/categories");
 
   return (
     <>
-      <h1>My store</h1>
+      <Header />
+      <Outlet />
+      {/* <Footer /> */}
     </>
   );
 }

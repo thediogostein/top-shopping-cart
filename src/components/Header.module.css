@@ -1,0 +1,30 @@
+.header {
+  background-color: aliceblue;
+  padding: 1.5rem 0;
+}
+
+.header ul {
+  list-style: none;
+  gap: 1rem;
+  display: flex;
+}
+
+.header nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.header a:hover,
+.header a:focus {
+  font-weight: 800;
+}
+
+.active {
+  color: red !important;
+}
