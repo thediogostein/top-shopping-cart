@@ -22,12 +22,12 @@ export function useFetch(endpoint) {
       })
       .catch((err) => {
         setError(err.message);
-        setData(null);
+        setData([]);
       })
       .finally(() => {
         setLoading(false);
       });
   }, []);
 
-  return { data, error, loading };
+  return { data, error, loading, setData };
 }

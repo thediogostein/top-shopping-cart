@@ -61,9 +61,22 @@ h6 {
   isolation: isolate;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
 /* Utils */
 .container {
   width: 80%;
   max-width: 1200px;
   margin-inline: auto;
+}
+
+.section {
+  padding: 4rem 0;
 }

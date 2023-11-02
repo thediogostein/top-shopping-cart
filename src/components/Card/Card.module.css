@@ -1,0 +1,24 @@
+.card {
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover,
+.card:focus {
+  box-shadow: 0px 20px 25px -3px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  color: black;
+}
+
+.imgContainer {
+  height: 200px;
+}
+
+.img {
+  height: 100%;
+  margin: 0 auto;
+}

@@ -1,0 +1,10 @@
+export { default as Home } from "./Home/Home";
+export { default as Shop } from "./Shop/Shop";
+export { default as All } from "./Shop/All";
+export { default as Electronics } from "./Shop/Electronics";
+export { default as Jewelery } from "./Shop/Jewelery";
+export { default as MenClothing } from "./Shop/MenClothing";
+export { default as WomenClothing } from "./Shop/WomenClothing";
+export { default as About } from "./About/About";
+export { default as ErrorPage } from "./Error/ErrorPage";
+export { default as Product } from "./Product/Product";
