@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 export default function Card({ id, category, title, image, price, rating }) {
   return (
     <li className={styles.card}>
-      <Link to={`${id}`}>
+      <Link to={`/product/${id}`}>
         <article>
           <div className={styles.imgContainer}>
             <img src={image} alt={title} className={styles.img} />

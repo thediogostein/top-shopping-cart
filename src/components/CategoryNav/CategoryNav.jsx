@@ -9,19 +9,45 @@ export default function CategoryNav() {
     <nav className={styles.nav}>
       <ul>
         <li>
-          <NavLink to="/shop">All</NavLink>
+          <NavLink
+            to="/shop"
+            end
+            className={({ isActive }) => (isActive ? `${styles.active}` : null)}
+          >
+            All
+          </NavLink>
         </li>
         <li>
-          <NavLink to="electronics">Electronics</NavLink>
+          <NavLink
+            to="electronics"
+            className={({ isActive }) => (isActive ? `${styles.active}` : null)}
+          >
+            Electronics
+          </NavLink>
         </li>
         <li>
-          <NavLink to="jewelery">Jewelery</NavLink>
+          <NavLink
+            to="jewelery"
+            className={({ isActive }) => (isActive ? `${styles.active}` : null)}
+          >
+            Jewelery
+          </NavLink>
         </li>
         <li>
-          <NavLink to="men">Men's Clothing</NavLink>
+          <NavLink
+            to="men"
+            className={({ isActive }) => (isActive ? `${styles.active}` : null)}
+          >
+            Men's Clothing
+          </NavLink>
         </li>
         <li>
-          <NavLink to="women">Women's Clothing</NavLink>
+          <NavLink
+            to="women"
+            className={({ isActive }) => (isActive ? `${styles.active}` : null)}
+          >
+            Women's Clothing
+          </NavLink>
         </li>
       </ul>
     </nav>

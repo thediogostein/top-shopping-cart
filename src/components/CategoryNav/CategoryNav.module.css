@@ -1,7 +1,20 @@
 .nav {
+  border: solid red;
+  margin: 1rem 0;
 }
 
 .nav ul {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.active {
+  color: red !important;
+}
+
+@media (min-width: 700px) {
+  .nav ul {
+    flex-direction: row;
+  }
 }

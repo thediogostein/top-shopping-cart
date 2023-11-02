@@ -45,7 +45,10 @@ export default function Router() {
             },
           ],
         },
-
+        {
+          path: "product/:id",
+          element: <Product />,
+        },
         {
           path: "about",
           element: <About />,
