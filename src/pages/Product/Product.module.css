@@ -1,0 +1,37 @@
+.cols {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  gap: 2rem;
+}
+
+.colLeft {
+  display: grid;
+  place-content: center;
+}
+
+.colRight {
+  background-color: aliceblue;
+  padding: 2rem;
+}
+
+.colLeft img {
+  max-height: 300px;
+  /* width: 100%; */
+  display: block;
+}
+
+@media (min-width: 800px) {
+  .cols {
+    flex-direction: row;
+  }
+
+  .colLeft {
+    width: 30%;
+  }
+
+  .colRight {
+    width: 70%;
+  }
+}
