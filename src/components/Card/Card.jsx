@@ -10,7 +10,7 @@ export default function Card({ id, category, title, image, price, rating }) {
           <div className={styles.imgContainer}>
             <img src={image} alt={title} className={styles.img} />
           </div>
-          <p>{category}</p>
+          <p className="category mb-1">{category}</p>
           <h2>{title}</h2>
           <p>${price}</p>
           <p>{rating.rate} / 5</p>

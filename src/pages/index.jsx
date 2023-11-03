@@ -8,3 +8,4 @@ export { default as WomenClothing } from "./Shop/WomenClothing";
 export { default as About } from "./About/About";
 export { default as ErrorPage } from "./Error/ErrorPage";
 export { default as Product } from "./Product/Product";
+export { default as Cart } from "./Cart/Cart";

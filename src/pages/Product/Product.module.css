@@ -22,6 +22,14 @@
   display: block;
 }
 
+/* Form */
+.label {
+  margin-right: 1rem;
+}
+.dropdown {
+  padding: 0.25rem 0.5rem;
+}
+
 @media (min-width: 800px) {
   .cols {
     flex-direction: row;
@@ -34,4 +42,17 @@
   .colRight {
     width: 70%;
   }
+}
+
+.btn {
+  background-color: black;
+  color: white;
+  padding: 0.25rem 2rem;
+  margin-top: 1.4rem;
+  cursor: pointer;
+}
+.btn:hover,
+.btn:focus {
+  background-color: white;
+  color: black;
 }

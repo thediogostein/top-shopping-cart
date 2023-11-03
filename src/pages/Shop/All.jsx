@@ -5,8 +5,6 @@ import ProductList from "../../components/ProductList/ProductList";
 export default function All() {
   const { data, error, loading } = useFetch("products");
 
-  console.log(data);
-
   if (loading) return <p>...loading</p>;
   if (error) return <p>{error}</p>;
 

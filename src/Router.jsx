@@ -12,6 +12,7 @@ import {
   Jewelery,
   MenClothing,
   WomenClothing,
+  Cart,
 } from "./pages/index.jsx";
 
 export default function Router() {
@@ -52,6 +53,10 @@ export default function Router() {
         {
           path: "about",
           element: <About />,
+        },
+        {
+          path: "cart",
+          element: <Cart />,
         },
       ],
     },

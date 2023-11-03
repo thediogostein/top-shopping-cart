@@ -4,7 +4,7 @@ import styles from "./CategoryNav.module.css";
 
 export default function CategoryNav() {
   const { data } = useFetch("products/categories");
-  console.log(data);
+
   return (
     <nav className={styles.nav}>
       <ul>

@@ -38,6 +38,16 @@ export default function Header() {
                 About
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="cart"
+                className={({ isActive }) =>
+                  isActive ? `${styles.active}` : null
+                }
+              >
+                Cart
+              </NavLink>
+            </li>
           </ul>
         </nav>
       </div>
