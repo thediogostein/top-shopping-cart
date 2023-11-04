@@ -1,3 +1,11 @@
+.container {
+  min-height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
 .cols {
   display: flex;
   flex-direction: column;
@@ -44,15 +52,7 @@
   }
 }
 
-.btn {
-  background-color: black;
-  color: white;
-  padding: 0.25rem 2rem;
-  margin-top: 1.4rem;
-  cursor: pointer;
-}
-.btn:hover,
-.btn:focus {
-  background-color: white;
-  color: black;
+.price {
+  font-size: 2rem;
+  font-weight: 800;
 }

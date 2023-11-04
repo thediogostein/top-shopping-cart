@@ -41,49 +41,53 @@ export default function Product() {
   return (
     <main className="container">
       <section className="section">
-        <button onClick={() => navigate(-1)}>Go back</button>
+        <div className={styles.container}>
+          <button onClick={() => navigate(-1)} className="btn btn-secondary">
+            Go back
+          </button>
 
-        {loading && <p>...loading</p>}
-        {error && <p>{`There is a problem fetching the product data`}</p>}
-        {!error && !loading && (
-          <div className={styles.cols}>
-            <div className={styles.colLeft}>
-              {" "}
-              <img src={image} alt={title} />
-            </div>
-            <div className={styles.colRight}>
-              <p className="category">{category}</p>
-              <h2>{title}</h2>
-              <p>{description}</p>
-              <p>${price}</p>
-              <form onSubmit={handleSubmit}>
-                <div>
-                  <label htmlFor="quantity" className={styles.label}>
-                    Quantity
-                  </label>
-                  <select
-                    name="quantity"
-                    id="quantity"
-                    className={styles.dropdown}
-                    onChange={handleQuantity}
-                    value={productQuantity}
-                  >
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                  </select>
-                </div>
+          {loading && <p>...loading</p>}
+          {error && <p>{`There is a problem fetching the product data`}</p>}
+          {!error && !loading && (
+            <div className={styles.cols}>
+              <div className={styles.colLeft}>
+                {" "}
+                <img src={image} alt={title} />
+              </div>
+              <div className={styles.colRight}>
+                <p className="category">{category}</p>
+                <h2>{title}</h2>
+                <p>{description}</p>
+                <p className={styles.price}>${price}</p>
+                <form onSubmit={handleSubmit}>
+                  <div className="mb-3">
+                    <label htmlFor="quantity" className={styles.label}>
+                      Quantity
+                    </label>
+                    <select
+                      name="quantity"
+                      id="quantity"
+                      className={styles.dropdown}
+                      onChange={handleQuantity}
+                      value={productQuantity}
+                    >
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
+                  </div>
 
-                <button type="submit" className={styles.btn}>
-                  Add to cart
-                </button>
-                {showMessage && <p>Added to cart</p>}
-              </form>
+                  <button type="submit" className="btn btn-primary">
+                    Add to cart
+                  </button>
+                  {showMessage && <p>Added to cart</p>}
+                </form>
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </section>
     </main>
   );
