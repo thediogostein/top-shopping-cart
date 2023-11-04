@@ -1,7 +1,7 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
 
-export default function Header() {
+export default function Header({ nrOfCartItems }) {
   return (
     <header className={styles.header}>
       <div className="container">
@@ -45,7 +45,7 @@ export default function Header() {
                   isActive ? `${styles.active}` : null
                 }
               >
-                Cart
+                Cart({nrOfCartItems})
               </NavLink>
             </li>
           </ul>

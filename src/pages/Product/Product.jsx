@@ -1,30 +1,40 @@
-import {
-  Link,
-  useNavigate,
-  useOutletContext,
-  useParams,
-} from "react-router-dom";
+import { useNavigate, useOutletContext, useParams } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
 import styles from "./Product.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Product() {
-  const [quantity, setQuantity] = useState(1);
+  const [productQuantity, setProductQuantity] = useState(1);
   const { productId } = useParams();
   const { data, error, loading } = useFetch(`products/${productId}`);
   const { title, description, price, category, image } = data;
-  const [setCart] = useOutletContext();
+  const [cart, addToCart] = useOutletContext();
+  const [showMessage, setShowMessage] = useState(false);
 
   function handleQuantity(e) {
-    setQuantity(e.target.value);
-    // atualiza o carrinho
+    setProductQuantity(e.target.value);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    const product = { productId, quantity };
-    console.log(product);
+    const item = {
+      id: parseInt(productId),
+      product: title,
+      image,
+      quantity: parseInt(productQuantity),
+      price,
+    };
+    addToCart(item);
+    setShowMessage(true);
   }
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setShowMessage(false);
+    }, 1600);
+
+    return () => clearTimeout(timeoutId);
+  }, [showMessage]);
 
   const navigate = useNavigate();
 
@@ -56,7 +66,7 @@ export default function Product() {
                     id="quantity"
                     className={styles.dropdown}
                     onChange={handleQuantity}
-                    value={quantity}
+                    value={productQuantity}
                   >
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -69,6 +79,7 @@ export default function Product() {
                 <button type="submit" className={styles.btn}>
                   Add to cart
                 </button>
+                {showMessage && <p>Added to cart</p>}
               </form>
             </div>
           </div>
