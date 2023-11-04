@@ -2,7 +2,6 @@ import Header from "./components/Header/Header";
 import { Outlet } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import { useEffect, useState } from "react";
-import { sayHi } from "./utils/sayHi.js";
 
 const cartArr = [
   // { id: 0, product: "shirt", quantity: 1, price: 100 },
@@ -55,10 +54,6 @@ function App() {
     const numberOfItems = cart.reduce((acc, curr) => acc + curr.quantity, 0);
     setNumberOfItems(numberOfItems);
   }, [cart]);
-
-  useEffect(() => {
-    sayHi();
-  }, []);
 
   return (
     <>
