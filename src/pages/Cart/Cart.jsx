@@ -16,15 +16,26 @@ export default function Cart() {
   return (
     <main className="container">
       <section className="section">
-        <h1>Cart</h1>
-        <ul className={styles.list}>
-          {cart.map((item) => (
-            <CartItem key={item.id} {...item} />
-          ))}
-        </ul>
-        {total ? <p>Total: ${totalPrice.toFixed(2)}</p> : <p>No items</p>}
-
-        {cart.length > 0 && <Link to="/checkout">Checkout</Link>}
+        <div className={styles.container}>
+          <h1>Cart</h1>
+          <ul className={styles.list}>
+            {cart.map((item) => (
+              <CartItem key={item.id} {...item} />
+            ))}
+          </ul>
+          {totalPrice ? (
+            <p className={styles.total}>
+              Total: <span>${totalPrice.toFixed(2)}</span>{" "}
+            </p>
+          ) : (
+            <p>No items</p>
+          )}
+          {cart.length > 0 && (
+            <Link to="/checkout" className="btn btn-primary">
+              Checkout
+            </Link>
+          )}
+        </div>
       </section>
     </main>
   );

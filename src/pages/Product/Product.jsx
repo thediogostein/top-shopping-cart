@@ -2,6 +2,7 @@ import { useNavigate, useOutletContext, useParams } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
 import styles from "./Product.module.css";
 import { useEffect, useState } from "react";
+import { getLabelColor } from "../../utils/getLabelColor";
 
 export default function Product() {
   const [productQuantity, setProductQuantity] = useState(1);
@@ -55,7 +56,7 @@ export default function Product() {
                 <img src={image} alt={title} />
               </div>
               <div className={styles.colRight}>
-                <p className="category">{category}</p>
+                <p className={getLabelColor(category)}>{category}</p>
                 <h2>{title}</h2>
                 <p>{description}</p>
                 <p className={styles.price}>${price}</p>

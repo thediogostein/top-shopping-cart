@@ -1,5 +1,18 @@
+.container {
+  min-height: 70vh;
+}
+
 .list {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+.total {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.total span {
+  font-weight: 800;
 }

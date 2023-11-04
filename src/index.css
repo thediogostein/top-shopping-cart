@@ -4,6 +4,9 @@
   --pink-900: #831843;
   --pink-950: #500724;
 
+  --red-600: #dc2626;
+  --red-700: #b91c1c;
+
   --purple-700: #7e22ce;
   --purple-800: #6b21a8;
 
@@ -160,7 +163,7 @@ a {
   border: none;
   padding: 0.25rem 1rem;
   cursor: pointer;
-  display: block;
+  display: inline-block;
 }
 
 .btn-primary {
@@ -181,4 +184,13 @@ a {
 .btn-secondary:hover,
 .btn-secondary:focus {
   background-color: var(--purple-700);
+}
+
+.btn-danger {
+  background-color: var(--red-700);
+  color: var(--neutral-100);
+}
+.btn-danger:hover,
+.btn-danger:focus {
+  background-color: var(--red-600);
 }

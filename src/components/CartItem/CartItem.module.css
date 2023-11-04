@@ -1,7 +1,66 @@
 .item {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--neutral-200);
   gap: 2rem;
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
+}
+
+.image {
+  height: 100px;
+  object-fit: cover;
+}
+
+.colRight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.product {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.price {
+  font-weight: 800;
+}
+
+.btnsContainer {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.increaseDecreaseBtn {
+  cursor: pointer;
+  border: none;
+  min-height: 30px;
+  min-width: 30px;
+  border-radius: 50%;
+  background-color: var(--pink-700);
+}
+
+.disabled {
+  opacity: 30%;
+}
+
+@media (min-width: 800px) {
+  .item {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .colRight {
+    flex-direction: row;
+  }
+
+  .product {
+    text-align: unset;
+  }
 }

@@ -1,0 +1,12 @@
+.header {
+  padding: 2rem 0;
+  background-color: aliceblue;
+}
+
+.formRow {
+  margin-bottom: 1rem;
+}
+
+.formRow label {
+  display: block;
+}

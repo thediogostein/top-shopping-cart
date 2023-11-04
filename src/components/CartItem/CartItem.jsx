@@ -15,22 +15,36 @@ export default function CartItem({ id, product, image, quantity, price }) {
   return (
     <li className={styles.item}>
       <div>
-        <img src={image} alt="" />
+        <img src={image} alt={product} className={styles.image} />
       </div>
-      <div>
-        <h2>{product}</h2>
-        <p>Price: ${price}</p>
-        <div>
-          <button disabled={quantity === 1} onClick={handleDecrease}>
+      <div className={styles.colRight}>
+        <h2 className={styles.product}>{product}</h2>
+        <p>
+          Price: <span className={styles.price}>${price}</span>{" "}
+        </p>
+        <div className={styles.btnsContainer}>
+          <button
+            disabled={quantity === 1}
+            onClick={handleDecrease}
+            className={
+              quantity === 1
+                ? `${styles.increaseDecreaseBtn} ${styles.disabled}`
+                : styles.increaseDecreaseBtn
+            }
+          >
             -
           </button>
           <span>{quantity}</span>
-          <button onClick={handleIncrease}>+</button>
+          <button
+            onClick={handleIncrease}
+            className={styles.increaseDecreaseBtn}
+          >
+            +
+          </button>
         </div>
-      </div>
-      <div>
-        {" "}
-        <button onClick={() => removeFromCart(id)}>Remove</button>
+        <button onClick={() => removeFromCart(id)} className="btn btn-danger">
+          Remove
+        </button>
       </div>
     </li>
   );
