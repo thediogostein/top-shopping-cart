@@ -5,15 +5,15 @@ import PropTypes from "prop-types";
 export default function Card({ id, category, title, image, price, rating }) {
   return (
     <li className={styles.card}>
-      <Link to={`/product/${id}`}>
+      <Link to={`/product/${id}`} className={styles.link}>
         <article>
-          <div className={styles.imgContainer}>
+          <div className={`${styles.imgContainer} mb-4`}>
             <img src={image} alt={title} className={styles.img} />
           </div>
           <p className="category mb-1">{category}</p>
-          <h2>{title}</h2>
-          <p>${price}</p>
-          <p>{rating.rate} / 5</p>
+          <h2 className={styles.title}>{title}</h2>
+          <p className={styles.price}>${price}</p>
+          <p className={styles.rate}>{rating.rate} / 5</p>
         </article>
       </Link>
     </li>

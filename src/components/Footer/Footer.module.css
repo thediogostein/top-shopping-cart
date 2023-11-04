@@ -1,0 +1,11 @@
+.footer {
+  background-color: aliceblue;
+}
+
+.container {
+  padding: 2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}

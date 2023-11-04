@@ -14,6 +14,7 @@ import {
   WomenClothing,
   Cart,
 } from "./pages/index.jsx";
+import Checkout from "./pages/Checkout/Checkout.jsx";
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -59,6 +60,10 @@ export default function Router() {
           element: <Cart />,
         },
       ],
+    },
+    {
+      path: "checkout",
+      element: <Checkout />,
     },
   ]);
   return <RouterProvider router={router} />;

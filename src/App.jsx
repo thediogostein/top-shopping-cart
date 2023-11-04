@@ -27,25 +27,47 @@ function App() {
     }
   }
 
+  function removeFromCart(id) {
+    console.log("removed", id);
+    const updatedCart = cart.filter((item) => item.id !== id);
+
+    setCart(updatedCart);
+  }
+
+  function increaseCartItem(id) {
+    const updatedCart = cart.map((item) =>
+      item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+    );
+
+    setCart(updatedCart);
+  }
+
+  function decreaseCartItem(id) {
+    const updatedCart = cart.map((item) =>
+      item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+    );
+
+    setCart(updatedCart);
+  }
+
   useEffect(() => {
     const numberOfItems = cart.reduce((acc, curr) => acc + curr.quantity, 0);
     setNumberOfItems(numberOfItems);
   }, [cart]);
 
-  function removeFromCart(id) {
-    console.log("removed", id);
-  }
-
-  function updateCart(id, quantity) {
-    console.log("updated", id);
-    console.log("quantity", quantity);
-  }
-
   return (
     <>
       <Header nrOfCartItems={nrOfItems} />
-      <Outlet context={[cart, addToCart]} />
-      {/* <Footer /> */}
+      <Outlet
+        context={[
+          cart,
+          addToCart,
+          removeFromCart,
+          increaseCartItem,
+          decreaseCartItem,
+        ]}
+      />
+      <Footer />
     </>
   );
 }
