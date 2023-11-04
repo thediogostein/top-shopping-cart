@@ -83,7 +83,7 @@ export default function Product() {
                   <button type="submit" className="btn btn-primary">
                     Add to cart
                   </button>
-                  {showMessage && <p>Added to cart</p>}
+                  {showMessage && <p className={styles.addedMsg}>Added to cart</p>}
                 </form>
               </div>
             </div>
